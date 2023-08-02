@@ -1,14 +1,8 @@
-# Discord-Image-Search-Bot
+# Discord-Image-Search-Bot-v2
 Make Image Search System For Discord Bot
 
-Don't Forget To Enter Your Api key and Custom Search ID in the code
+Ah. Just a modified version of Botzzz
 
-Video Tutorial = https://youtu.be/Ax_CyohQLEI
-
-
-![image](https://user-images.githubusercontent.com/76769524/113527427-b6b17800-95e7-11eb-883d-3bac7a4b5919.png)
-
-
-
-Donate if you want to.
-Paypal : donationmir5@gmail.com
+Features:
+- Splash command + Prefix command
+- Safe search
