@@ -8,19 +8,22 @@ import random
 
 client = commands.Bot(command_prefix="$")
 api_key = "<YOUR CUSTOM SEARCH API KEY>"
+cse_id = "<YOUR PROJECT CSE ID>"
+token = "<YOUR DISCORD BOT TOKEN>"
 
 
 @client.event
 async def on_ready():
     print("!!! Bot Is Online !!!\n")
+    await bot.tree.sync()
 
 
-@client.command(aliases=["show"])
-async def showpic(ctx, *, search):
+@client.hybrid_command(name="show", with_app_command=True, description="shows a random image from google")
+async def show(ctx, *, search):
     ran = random.randint(0, 9)
     resource = build("customsearch", "v1", developerKey=api_key).cse()
     result = resource.list(
-        q=f"{search}", cx="<YOUR SEARCH ENGINE ID>", searchType="image"
+        q=f"{search}", cx=f"{cse_id}", searchType="image", safe="active"
     ).execute()
     url = result["items"][ran]["link"]
     embed1 = discord.Embed(title=f"Here Your Image ({search}) ")
@@ -28,4 +31,4 @@ async def showpic(ctx, *, search):
     await ctx.send(embed=embed1)
 
 
-client.run("<YOUR DISCORD BOT TOKEN>")
+client.run(token)
