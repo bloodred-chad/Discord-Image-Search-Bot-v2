@@ -6,7 +6,9 @@ from googleapiclient.discovery import build
 #! Import this
 import random
 
-client = commands.Bot(command_prefix="$")
+intents = discord.Intents.default()
+intents.message_content = True
+client = commands.Bot(command_prefix="$", intents=intents)
 api_key = "<YOUR CUSTOM SEARCH API KEY>"
 cse_id = "<YOUR PROJECT CSE ID>"
 token = "<YOUR DISCORD BOT TOKEN>"
@@ -15,7 +17,7 @@ token = "<YOUR DISCORD BOT TOKEN>"
 @client.event
 async def on_ready():
     print("!!! Bot Is Online !!!\n")
-    await bot.tree.sync()
+    await client.tree.sync()
 
 
 @client.hybrid_command(name="show", with_app_command=True, description="shows a random image from google")
