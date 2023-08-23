@@ -1,0 +1,3 @@
+api_key = "<YOUR CUSTOM SEARCH API KEY>"
+cse_id = "<YOUR PROJECT CSE ID>"
+token = "<YOUR DISCORD BOT TOKEN>"
