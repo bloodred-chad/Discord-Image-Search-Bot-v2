@@ -17,7 +17,7 @@ async def on_ready():
 
 
 @client.hybrid_command(name="show", with_app_command=True, description="shows a random image from google")
-async def show(ctx: commands.Context, search: str):
+async def show(ctx: commands.Context, *, search: str):
     ran = random.randint(0, 9)
     resource = build("customsearch", "v1", developerKey=api_key).cse()
     result = resource.list(
